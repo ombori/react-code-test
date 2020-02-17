@@ -27,14 +27,14 @@ export default class RenderUserList extends React.Component
 		this.retrieveUserPages=this.retrieveUserPages.bind(this); //Binding the function retrieveUserPages to this, so it has access to this when called from the InfiniteScroll component
 	}
 
-  componentDidMount()
-  {
-    var pageId=this.state.pageId,
-        URI=this.props.baseURI+(pageId*1+1);
+	componentDidMount()
+	{
+		var pageId=this.state.pageId,
+			URI=this.props.baseURI+(pageId*1+1);
 
-    fetch(URI)
-      .then(response => response.json())
-      .then(buf => this.setState({pageId: (pageId*1+1), numUsersPerPage: buf.per_page, numPages: buf.total_pages, users: buf.data})); //Retrieving the metadata as well as the first page of users
+		fetch(URI)
+			.then(response => response.json())
+			.then(buf => this.setState({pageId: (pageId*1+1), numUsersPerPage: buf.per_page, numPages: buf.total_pages, users: buf.data})); //Retrieving the metadata as well as the first page of users
 	}
 
 	retrieveUserPages()
