@@ -1,0 +1,71 @@
+$color: #7FB900;
+
+@mixin flex-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes circle-small {
+  from { transform: scale(0.8); }
+  to { transform: scale(1); }
+}
+
+@keyframes circle-medium {
+  from { transform: scale(0.6); }
+  to { transform: scale(1); }
+}
+
+@keyframes circle-normal {
+  from { transform: scale(0.4); }
+  to { transform: scale(1); }
+}
+
+#e30 .loader {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  @include flex-center-center;
+
+  .circles {
+    @include flex-center-center;
+
+    width: 100px;
+    height: 100px;
+
+    .circle {
+      position: absolute;
+
+      width: 0;
+      height: 0;
+
+      &:nth-child(1) {
+        z-index: 3;
+        border: 8px solid $color;
+        border-radius: 8px;
+
+        animation: 1s infinite alternate circle-normal;
+        animation-delay: 100ms;
+      }
+
+      &:nth-child(2) {
+        z-index: 2;
+        border: 40px solid $color;
+        border-radius: 40px;
+        opacity: 0.35;
+        animation: 1s infinite alternate circle-medium;
+        //animation-delay: 205ms;
+      }
+
+      &:nth-child(3) {
+        z-index: 1;
+        border: 50px solid $color;
+        border-radius: 50px;
+        opacity: 0.3;
+        animation: 1s infinite alternate circle-small;
+      }
+    }
+  }
+}
