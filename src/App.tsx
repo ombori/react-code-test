@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Loader from './components/Loader/Loader.component';
 import ContactList from './components/ContactList/ContactList.component';
 import ErrorMessage from './components/ErrorMessage/ErrorMessage.component';
-import { getContacts, IContact } from './services/Contacts/Contacts.service';
+import { getContacts, IContact, IPaginatedResponse } from './services/Contacts/Contacts.service';
 
 import './App.scss';
 
@@ -19,7 +19,7 @@ function App() {
         setIsError(false);
 
         getContacts(page)
-            .then((response) => {
+            .then((response: IPaginatedResponse<IContact>) => {
                 setContacts([...contacts, ...response.data]);
                 setTotalPage(response.total_pages);
                 setCurrentPage(response.page);
