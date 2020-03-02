@@ -1,0 +1,45 @@
+#e30 .contactList {
+  height: 100%;
+  overflow-y: scroll;
+
+  margin-left: 10px;
+
+  .rowLoader {
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+    padding: 20px 0;
+    height: 32px;
+    .loader {
+      transform: scale(0.5);
+    }
+  }
+
+
+  footer {
+    padding: 10px 10px 10px 0;
+    text-align: center;
+  }
+
+  .contact {
+    display: flex;
+    align-items: center;
+    height: 128px;
+
+    img {
+      border-radius: 50%;
+      overflow: hidden;
+
+      width: 48px;
+
+      margin: 10px 0;
+    }
+
+    & > span {
+      margin-left: 20px;
+    }
+
+    border-bottom: 1px solid #e1e1e1;
+  }
+
+}
