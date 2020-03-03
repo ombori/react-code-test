@@ -5,20 +5,10 @@
     "node": true
   },
 
-  "ecmaFeatures": {
-    "modules": true
-  },
-
   "globals": {
     "React": true,
     "ReactDOM": true
   },
-
-  "parser": "babel-eslint",
-
-  "plugins": [
-    "react"
-  ],
 
   "extends": ["react-app", "plugin:prettier/recommended"],
 

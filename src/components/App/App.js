@@ -10,7 +10,7 @@ function App() {
       <Router>
         <Switch>
           {routes.map(route => (
-            <Route {...route} />
+            <Route {...route} key={route.path} />
           ))}
         </Switch>
       </Router>
