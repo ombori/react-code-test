@@ -6,6 +6,7 @@
 }
 .users-list__item__img {
   width: 85px;
+  height: 85px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
