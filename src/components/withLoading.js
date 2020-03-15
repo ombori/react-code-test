@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
-import Loading from "./Loading/Loading";
+import Loading from "../common/components/Loading/Loading";
 
-const withLoading = WrappedComponent => ({ data, ...restProps }) => {
-  return data && data.data ? (
-    <WrappedComponent {...restProps} data={data.data} />
-  ) : (
-    <Loading />
+const withLoading = WrappedComponent => ({ ...restProps }) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  return (
+    <>
+      {isLoading && <Loading />}
+      <WrappedComponent
+        {...restProps}
+        setIsLoading={setIsLoading}
+        style={{ display: isLoading ? "none" : "block" }}
+      />
+    </>
   );
 };
 
