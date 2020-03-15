@@ -24,6 +24,7 @@ class UsersList extends React.Component {
   loadData = () => {
     const { setIsLoading } = this.props;
     const { items, page, loaded } = this.state;
+
     if (loaded) return;
     fetchData(generateUrl("users", page)).then(data => {
       if (data.data) {
