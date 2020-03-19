@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.users-list__img
+{
+    width: 79px;
+    border-radius: 71%;
+    height: 79px;
+    }
+.view__users{
+        width: 15%;
+    display: flex;
+    padding: 31px;
+
+}
+.users-list__li{
+    display: flex;
+}
+h2{
+    margin-left: 21px;
+}
