@@ -1,0 +1,48 @@
+.custom-loader {
+  /* set the loader at the center of the screen .margin added so that the 
+  origin of circle is at the center of the page  */
+  position: relative;
+  top: 50%;
+  margin: -75px auto auto auto;
+}
+.outer-1 {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border-radius: 50%;
+  background-color: #e5f1cc;
+}
+.inner-1 {
+  top: 10%;
+  left: 10%; /* of the container */
+  width: 80%; /* of the outer-1 */
+  height: 80%; /* of the outer-1 */
+  position: absolute;
+  border-radius: 50%;
+  background-color: #d0e5a3;
+  animation: pulse 1s infinite;
+}
+.inner-2 {
+  background-color: #7fb900;
+  top: 40%;
+  left: 40%;
+  width: 20%;
+  height: 20%;
+  position: absolute;
+  border-radius: 50%;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.7);
+    box-shadow: 0 0 0 0#7fb900;
+  }
+  50% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px #d0e5a3;
+  }
+  100% {
+    transform: scale(0.7);
+    box-shadow: 0 0 0 15px #e5f1cc;
+  }
+}
