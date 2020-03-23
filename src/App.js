@@ -1,28 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Loader from "./components/Loader/Loader";
+import User from "./components/User/User";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [showLoader, handleShowLoader] = useState(true);
+  useEffect(() => {
+    const timeoutHandler = setTimeout(() => {
+      // remove the loader after displaying it for 3000ms
+      handleShowLoader(false);
+    }, 3000);
+    return () => clearTimeout(timeoutHandler);
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          <code> src/App.js </code>
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">{showLoader ? <Loader /> : <User />}</div>
     </div>
   );
-}
+};
 
 export default App;
